@@ -6,10 +6,14 @@ import { ionicBootstrap, Platform, Nav, NavController } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { UserService } from './shared/shared';
+import { CognitoService } from "./shared/aws/cognito.service";
+import { DynamoDBService } from "./shared/aws/dynamo.service";
+import { ConfigProvider } from "./shared/aws/config";
 
 import { HomeComponent } from './pages/home';
 import { LoginComponent } from './pages/login';
 import { UserComponent } from './pages/user';
+import { AWSComponent } from './pages/aws';
 
 @Component({
   templateUrl: 'build/app.html'
@@ -31,7 +35,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Login', component: LoginComponent },
-      { title: 'Home', component: HomeComponent }
+      { title: 'Home', component: HomeComponent },
+      { title: 'AWS', component: AWSComponent }
     ];
 
   }
@@ -63,7 +68,10 @@ export class MyApp {
 }
 
 const PROVIDERS = [
-  UserService
+  UserService,
+  DynamoDBService,
+  CognitoService,
+  ConfigProvider
 ];
 
 ionicBootstrap(
