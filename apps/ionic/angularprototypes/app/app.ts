@@ -1,14 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Subscription } from 'rxjs/Subscription';
-
 import {
-  ionicBootstrap,
-  Platform,
-  Nav,
-  NavController,
-  ModalController
-} from 'ionic-angular';
+  ionicBootstrap, Platform, Nav, NavController, ModalController } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { UserService } from './shared/shared/user/user.service';
@@ -22,11 +15,9 @@ import { UserComponent } from './pages/user';
   templateUrl: 'build/app.html'
 })
 export class MyApp {
-
   @ViewChild(Nav) nav: Nav;
 
-  private _subs: Array<Subscription> = [];
-  private rootPage: any;
+  private rootPage: any = LoginComponent;
   private pages: Array<{ title: string, component: any }>;
   private navController: NavController;
 
@@ -42,15 +33,6 @@ export class MyApp {
       { title: 'Login', component: LoginComponent },
       { title: 'Home', component: HomeComponent }
     ];
-
-    this.userService.isAuthenticated()
-      .then((res: boolean) => {
-        this.rootPage = res ? UserComponent : LoginComponent;
-      })
-  }
-
-  ionViewWillUnload() {
-    while (this._subs.length) this._subs.pop().unsubscribe();
   }
 
   initializeApp() {
@@ -65,12 +47,8 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
-
   }
-
-
 }
-
 
 ionicBootstrap(
   MyApp,

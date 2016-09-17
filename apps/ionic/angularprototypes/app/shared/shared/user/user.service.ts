@@ -40,7 +40,7 @@ export class UserService {
         this.storage.setJson('user', AUTH_USER);
         resolve(true)
       } else {
-        reject('Not a valid credentials');
+        reject('unkwown username/password.');
       }
     })
   }
