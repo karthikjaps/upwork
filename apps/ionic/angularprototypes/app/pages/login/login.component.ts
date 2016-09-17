@@ -12,7 +12,6 @@ import { UserService } from '../../shared/shared';
   templateUrl: 'build/pages/login/login.component.html'
 })
 export class LoginComponent {
-
   private username: string;
   private password: string;
   private erroMessage: string;

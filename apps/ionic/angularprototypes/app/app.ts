@@ -15,10 +15,9 @@ import { UserComponent } from './pages/user';
   templateUrl: 'build/app.html'
 })
 export class MyApp {
-
   @ViewChild(Nav) nav: Nav;
 
-  private rootPage: any;
+  private rootPage: any = LoginComponent;
   private pages: Array<{ title: string, component: any }>;
   private navController: NavController;
 

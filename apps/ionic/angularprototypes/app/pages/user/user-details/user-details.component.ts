@@ -4,16 +4,16 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { Observable } from 'rxjs/Observable';
 
-import { LoginComponent } from '../../login'
-
-import { AuthGaurdService, IUser } from '../../../shared/shared'
+import { AuthGaurdService, DiagramComponent, IUser } from '../../../shared/shared';
 
 @Component({
   templateUrl: 'build/pages/user/user-details/user-details.component.html',
+  directives : [ DiagramComponent ],
   providers : [ AuthGaurdService ]
 })
 export class UserDetailsComponent {
   private userDetails: IUser;
+  context:CanvasRenderingContext2D;
   
   constructor(
     private navParams: NavParams,
@@ -26,4 +26,3 @@ export class UserDetailsComponent {
     this.userDetails = this.navParams.get('userDetails');
   }
 }
-
