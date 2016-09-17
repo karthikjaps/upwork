@@ -27,7 +27,7 @@ export class LoginComponent {
     this.userService.doLogin(this.username, this.password).then((res: boolean) => {
       this.navigateToDashboardPage();
     }, (errRes) => { 
-      this.erroMessage = 'unkwown username/password.';
+      this.erroMessage = errRes;
     })
   }
 
