@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { RatingComponent } from '../../shared/rating'
 
 @Component({
-  templateUrl: 'build/pages/home/home.html',
+  templateUrl: 'build/pages/home/home.component.html',
   directives : [
     RatingComponent
   ]
 })
-export class HomePage {
+export class HomeComponent {
   private selectedRating: number;
 }
