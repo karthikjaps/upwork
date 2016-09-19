@@ -4,12 +4,15 @@ import {
   ionicBootstrap, Platform, Nav, NavController, ModalController } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
-import { UserService } from './shared/shared/user/user.service';
-import { AuthGaurdService } from './shared/shared/core/authgaurd';
+import { UserService } from './shared/shared';
+import { CognitoService } from "./shared/aws/cognito.service";
+import { DynamoDBService } from "./shared/aws/dynamo.service";
+import { ConfigProvider } from "./shared/aws/config";
 
 import { HomeComponent } from './pages/home';
 import { LoginComponent } from './pages/login';
 import { UserComponent } from './pages/user';
+import { AWSComponent } from './pages/aws';
 
 @Component({
   templateUrl: 'build/app.html'
@@ -31,7 +34,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Login', component: LoginComponent },
-      { title: 'Home', component: HomeComponent }
+      { title: 'Home', component: HomeComponent },
+      { title: 'AWS', component: AWSComponent }
     ];
 
     this.userService.isAuthenticated()
@@ -55,7 +59,15 @@ export class MyApp {
   }
 }
 
+<<<<<<< HEAD:app/app.ts
+const PROVIDERS = [
+  UserService,
+  DynamoDBService,
+  CognitoService,
+  ConfigProvider
+];
+
 ionicBootstrap(
   MyApp,
-  [ UserService ]
+  PROVIDERS
 );

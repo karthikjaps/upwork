@@ -45,3 +45,7 @@ plugins/
 *.swp
 .DS_Store
 Thumbs.db
+
+# ide
+.idea
+.vscode

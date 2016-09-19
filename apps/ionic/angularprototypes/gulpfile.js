@@ -67,7 +67,20 @@ gulp.task('build', ['clean'], function(done){
 gulp.task('sass', buildSass);
 gulp.task('html', copyHTML);
 gulp.task('fonts', copyFonts);
-gulp.task('scripts', copyScripts);
+gulp.task('scripts', function(){
+  return copyScripts({src: [
+    'node_modules/es6-shim/es6-shim.min.js',
+    'node_modules/es6-shim/es6-shim.map',
+    'node_modules/zone.js/dist/zone.js',
+    'node_modules/reflect-metadata/Reflect.js',
+    'node_modules/reflect-metadata/Reflect.js.map',
+    'node_modules/amazon-cognito-identity-js/dist/amazon-cognito-identity.min.js',
+    'node_modules/aws-sdk/dist/aws-sdk.min.js',
+    'node_modules/sjcl/sjcl.js',
+    'node_modules/jsbn/index.js',
+    'node_modules/amazon-cognito-identity-js/dist/aws-cognito-sdk.min.js'
+  ]});
+});
 gulp.task('clean', function(){
   return del('www/build');
 });
