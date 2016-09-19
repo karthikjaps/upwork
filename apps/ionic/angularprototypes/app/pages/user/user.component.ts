@@ -4,13 +4,14 @@ import { NavController } from 'ionic-angular';
 
 import { Observable } from 'rxjs/Observable';
 
-import { UserDetailsComponent } from './user-details';
-
-import { UserService, IUser, AuthGaurdService } from '../../shared/shared';
+import { AuthGuardService } from "./authguard.service";
+import { IUser } from "./user.schema";
+import { UserService } from "./user.service";
+import { UserDetailsComponent } from "./user-details.component";
 
 @Component({
   templateUrl: 'build/pages/user/user.component.html',
-  providers : [ AuthGaurdService ]
+  providers : [ AuthGuardService ]
 })
 export class UserComponent {
   private users$: Observable<IUser[]>;
@@ -18,7 +19,7 @@ export class UserComponent {
   constructor(
     private navController: NavController,
     private userService: UserService,
-    private authService: AuthGaurdService
+    private authService: AuthGuardService
   ) {
   }
 
