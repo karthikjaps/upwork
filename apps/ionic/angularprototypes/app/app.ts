@@ -59,7 +59,6 @@ export class MyApp {
   }
 }
 
-<<<<<<< HEAD:app/app.ts
 const PROVIDERS = [
   UserService,
   DynamoDBService,
