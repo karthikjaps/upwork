@@ -4,25 +4,22 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { Observable } from 'rxjs/Observable';
 
-import { AuthGaurdService, DiagramComponent, IUser } from '../../../shared/shared';
+import { DiagramComponent } from '../../../shared/diagram';
+import { IUser } from '../../../shared/shared';
 
 @Component({
   templateUrl: 'build/pages/user/user-details/user-details.component.html',
-  directives : [ DiagramComponent ],
-  providers : [ AuthGaurdService ]
+  directives : [ DiagramComponent ]
 })
 export class UserDetailsComponent {
   private userDetails: IUser;
-  context:CanvasRenderingContext2D;
   
   constructor(
-    private navParams: NavParams,
-    private authService : AuthGaurdService
+    private navParams: NavParams
   ) {
   }
 
   ngOnInit() {
-    this.authService.authenticate();
     this.userDetails = this.navParams.get('userDetails');
   }
 }

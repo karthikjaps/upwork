@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 import { NavController } from 'ionic-angular';
