@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CognitoService } from "../../shared/aws/cognito.service";
-import { DynamoDBService } from "../../shared/aws/dynamo.service";
+import { CognitoService, DynamoDBService } from "../../shared/aws";
 
 @Component({
   templateUrl: 'build/pages/aws/aws.component.html'
 })
+
 export class AWSComponent {
   public constructor(private cognitoService:CognitoService, private dynamoService:DynamoDBService) {
   }

@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 import { NavController } from 'ionic-angular';
-
-import { UserComponent } from '../user';
-
-import { UserService } from '../../shared/shared';
-
+import { UserService, UserComponent } from "../user";
 
 @Component({
   templateUrl: 'build/pages/login/login.component.html'

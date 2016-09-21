@@ -4,15 +4,15 @@ import {
   ionicBootstrap, Platform, Nav, NavController, ModalController } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
-import { UserService } from './shared/shared';
 import { CognitoService } from "./shared/aws/cognito.service";
 import { DynamoDBService } from "./shared/aws/dynamo.service";
 import { ConfigProvider } from "./shared/aws/config";
 
 import { HomeComponent } from './pages/home';
 import { LoginComponent } from './pages/login';
-import { UserComponent } from './pages/user';
 import { AWSComponent } from './pages/aws';
+import {UserService} from "./pages/user/user.service";
+import {UserComponent} from "./pages/user/user.component";
 
 @Component({
   templateUrl: 'build/app.html'
