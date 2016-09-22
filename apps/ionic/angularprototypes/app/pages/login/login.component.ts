@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { UserService, UserComponent } from "../user";
+import {UserService} from "../../shared/shared/user/user.service";
+import {UserComponent} from "../user/user.component";
 
 @Component({
   templateUrl: 'build/pages/login/login.component.html'

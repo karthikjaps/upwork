@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { IUser } from "../../shared/shared/user/user.schema";
 import { UserService } from "../../shared/shared/user/user.service";
-import { UserDetailsComponent } from "./user-details";
+import {UserDetailsComponent} from "./user-details/user-details.component";
 
 @Component({
   templateUrl: 'build/pages/user/user.component.html'
