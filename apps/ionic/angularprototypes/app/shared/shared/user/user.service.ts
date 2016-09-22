@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable  } from '@angular/core';
 import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/map';
@@ -16,9 +16,11 @@ const AUTH_USER = {
 export class UserService {
 
   private storage: Storage;
+  private http: Http;
 
-  constructor(private http: Http) {
+  constructor(http: Http) {
     this.storage = new Storage(LocalStorage);
+    this.http = http;
   }
 
   isAuthenticated(): Promise<boolean> {
