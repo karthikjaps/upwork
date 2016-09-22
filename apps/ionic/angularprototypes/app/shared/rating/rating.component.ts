@@ -54,6 +54,7 @@ export class RatingComponent implements ControlValueAccessor, OnInit {
   }
 
   ngOnInit() {
+    this.value = this.ratingValue || 0;
     this.range = this.buildRatingObject();
   }
 

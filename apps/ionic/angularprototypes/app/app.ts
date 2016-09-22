@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
 
 import {
   ionicBootstrap, Platform, Nav, NavController, ModalController } from 'ionic-angular';
@@ -11,8 +12,8 @@ import { ConfigProvider } from "./shared/aws/config";
 import { HomeComponent } from './pages/home';
 import { LoginComponent } from './pages/login';
 import { AWSComponent } from './pages/aws';
-import {UserService} from "./pages/user/user.service";
-import {UserComponent} from "./pages/user/user.component";
+import { QuestionsComponent } from './pages/question';
+import { UserService } from "./shared/shared/user/user.service";
 
 @Component({
   templateUrl: 'build/app.html'
@@ -26,8 +27,8 @@ export class MyApp {
 
   constructor(
     private platform: Platform,
-    private userService: UserService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private userService: UserService
   ) {
     this.initializeApp();
 
@@ -35,13 +36,9 @@ export class MyApp {
     this.pages = [
       { title: 'Login', component: LoginComponent },
       { title: 'Home', component: HomeComponent },
-      { title: 'AWS', component: AWSComponent }
+      { title: 'AWS', component: AWSComponent },
+      { title: 'Questions', component: QuestionsComponent }
     ];
-
-    this.userService.isAuthenticated()
-      .then((res: boolean) => {
-        this.rootPage = res ? UserComponent : LoginComponent;
-      })
   }
 
   initializeApp() {

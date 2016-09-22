@@ -20,7 +20,7 @@ export class LoginComponent {
   login() {
     this.userService.doLogin(this.username, this.password).then((res: boolean) => {
       this.navigateToDashboardPage();
-    }, (errRes) => { 
+    }, (errRes) => {
       this.erroMessage = errRes;
     })
   }
