@@ -39,7 +39,7 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 node_modules/
-www/build/
+./apps/ionic/angularprototypes/www/build/
 platforms/
 plugins/
 *.swp
